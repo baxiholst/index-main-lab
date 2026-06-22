@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>麻将胡了 · 产品介绍</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f2f2f0;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            color: #2e2d2a;
+            line-height: 1.7;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* 柔和卡片 */
+        .card {
+            background: #ffffff;
+            border-radius: 18px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04), 0 2px 6px rgba(0, 0, 0, 0.02);
+            padding: 2rem 2.2rem;
+            margin-bottom: 2rem;
+            border: 1px solid #e8e6e3;
+            transition: box-shadow 0.15s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.06);
+        }
+
+        h1, h2, h3 {
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            color: #2b2926;
+        }
+
+        h1 {
+            font-size: 2.1rem;
+            margin-bottom: 0.6rem;
+            line-height: 1.3;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.2rem;
+            border-left: 4px solid #bfa88b;
+            padding-left: 1rem;
+            color: #3a3733;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            margin: 1.6rem 0 0.6rem;
+        }
+
+        p, li {
+            font-size: 1rem;
+            color: #44423d;
+        }
+
+        p {
+            margin-bottom: 0.9rem;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        li {
+            padding: 0.3rem 0 0.3rem 1.4rem;
+            position: relative;
+        }
+
+        li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #9c8874;
+            font-size: 1.1rem;
+        }
+
+        a {
+            color: #7f6b55;
+            text-decoration: none;
+            border-bottom: 1px solid #d9cec3;
+            padding-bottom: 1px;
+            transition: color 0.2s, border-color 0.2s;
+        }
+
+        a:hover {
+            color: #4d3e31;
+            border-bottom-color: #7f6b55;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 2.8rem 1.5rem 2rem;
+        }
+
+        .hero p {
+            max-width: 600px;
+            margin: 0.8rem auto 0;
+            color: #5c5852;
+            font-size: 1.08rem;
+        }
+
+        .features-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin-top: 0.8rem;
+        }
+
+        .feature-item {
+            flex: 1 1 180px;
+            background: #f9f8f6;
+            border-radius: 14px;
+            padding: 1.1rem 1.2rem;
+            border: 1px solid #e4e0db;
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.6);
+        }
+
+        .feature-item strong {
+            display: block;
+            font-weight: 490;
+            color: #3d3a35;
+            margin-bottom: 0.25rem;
+            font-size: 1.05rem;
+        }
+
+        .feature-item span {
+            font-size: 0.9rem;
+            color: #6b655d;
+        }
+
+        .scenario-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 0.9rem;
+        }
+
+        .scenario-list li {
+            background: #faf9f7;
+            border-radius: 10px;
+            padding: 0.8rem 1rem 0.8rem 2.2rem;
+            border: 1px solid #edeae5;
+        }
+
+        .scenario-list li::before {
+            left: 0.8rem;
+            color: #b09a81;
+        }
+
+        .tip-box {
+            background: #f6f3ef;
+            border-radius: 14px;
+            padding: 1.3rem 1.8rem;
+            border-left: 3px solid #c7b5a1;
+            margin: 1.4rem 0 0.2rem;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #e3dfd9;
+            padding: 0.9rem 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-q {
+            font-weight: 490;
+            color: #3f3b35;
+        }
+
+        .faq-a {
+            color: #5d5850;
+            margin-top: 0.2rem;
+            font-size: 0.95rem;
+        }
+
+        .footer-note {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #8b857b;
+            padding: 2rem 0 1rem;
+            border-top: 1px solid #ddd9d3;
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 540px) {
+            body {
+                padding: 1rem 0.6rem;
+            }
+            .card {
+                padding: 1.4rem 1.2rem;
+            }
+            h1 {
+                font-size: 1.7rem;
+            }
+            h2 {
+                font-size: 1.3rem;
+            }
+            .hero {
+                padding: 1.8rem 0.6rem 1.2rem;
+            }
+            .feature-item {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- HERO -->
+    <div class="card hero">
+        <h1>麻将胡了 · 产品说明</h1>
+        <p>围绕主题内容展开的清晰整理，从规则到体验，从场景到细节。希望能帮助你快速了解这个经典玩法背后的结构与特点。</p>
+    </div>
+
+    <!-- 摘要：关于麻将胡了 -->
+    <div class="card">
+        <h2>一、摘要</h2>
+        <p>「麻将胡了」是一种以传统麻将胡牌规则为核心的娱乐形式。它并非单一游戏，而是一类将麻将番型、组合逻辑与节奏控制相结合的表达方式。无论是经典四人局还是简化变体，其核心始终围绕“凑牌—听牌—胡牌”这一基本链条展开。下面从几个侧面对其进行梳理。</p>
+        <p>如果你希望了解完整的玩法与版本信息，可以参考 <a href="https://china-mahjongwin.com">麻将胡了</a> 的相关介绍。那里提供了更多关于牌型、计分规则以及常见问题的说明。</p>
+    </div>
+
+    <!-- 亮点：结构化的特点 -->
+    <div class="card">
+        <h2>二、亮点与特点</h2>
+        <div class="features-grid">
+            <div class="feature-item">
+                <strong>牌型组合</strong>
+                <span>顺子、刻子、杠牌、对子多种搭配，番种清晰</span>
+            </div>
+            <div class="feature-item">
+                <strong>节奏可控</strong>
+                <span>摸打轮次紧凑，听牌路径有迹可循</span>
+            </div>
+            <div class="feature-item">
+                <strong>变体丰富</strong>
+                <span>不同地区规则略有差异，但基础逻辑一致</span>
+            </div>
+            <div class="feature-item">
+                <strong>策略与运气</strong>
+                <span>牌效取舍与防守判断并重，非纯概率</span>
+            </div>
+        </div>
+        <p style="margin-top:1.2rem;">以上几点构成了这类玩法长期受到关注的原因。玩家在熟悉基础规则后，往往能体会到牌局中微妙的进退节奏。</p>
+    </div>
+
+    <!-- 使用建议 / 场景 -->
+    <div class="card">
+        <h2>三、使用建议与常见场景</h2>
+        <p>根据多数参与者的反馈，以下情境比较适合接触或深入体验这套玩法：</p>
+        <ul class="scenario-list">
+            <li>朋友聚会时，作为轻松又不乏思考的桌面活动</li>
+            <li>想了解麻将基本胡牌逻辑的新手，从简化规则开始</li>
+            <li>已有一定牌类基础，希望熟悉更多番型组合的玩家</li>
+            <li>在线练习或查阅规则资料时，搭配规则说明一起理解</li>
+        </ul>
+        <div class="tip-box">
+            <strong>一点建议：</strong> 初次接触时不必强记所有番种，先掌握吃碰杠与基本胡牌形式，再逐步了解复合番型。规则中有不少约定俗成的细节，慢慢熟悉即可。
+        </div>
+    </div>
+
+    <!-- 可信但克制的访问说明 -->
+    <div class="card">
+        <h2>四、关于信息与访问</h2>
+        <p>关于「麻将胡了」的规则整理、常见牌型举例以及部分变体说明，在 <a href="https://china-mahjongwin.com">麻将胡了</a> 页面中有较为系统的汇总。该页面内容基于通用麻将规则进行归纳，不涉及任何不当诱导或虚假承诺，仅作为信息参考。建议读者根据自身需求选择性地阅读相关章节，并结合实际对局验证理解。</p>
+        <p>需要说明的是，麻将类玩法在不同地区可能存在细微差异，部分特殊规则（如花牌、百搭牌等）请以当地通用习惯为准。本介绍页仅提供一般性说明，不构成任何形式的操作指引或利益保证。</p>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="card">
+        <h2>五、FAQ 摘要</h2>
+        <div class="faq-item">
+            <div class="faq-q">Q: 胡牌必须自摸吗？</div>
+            <div class="faq-a">A: 不一定。点炮（别人打出你听的牌）同样可以胡牌，部分规则中自摸番数更高。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">Q: 七对子和十三幺是特殊胡法吗？</div>
+            <div class="faq-a">A: 是的。这两种属于特殊牌型，不依赖顺子或刻子，有独立的组成要求。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">Q: 吃碰后还能胡牌吗？</div>
+            <div class="faq-a">A: 可以。吃碰后手牌减少，但依然可以听牌并胡牌，只是部分番种可能受影响。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">Q: 规则中“门清”是什么意思？</div>
+            <div class="faq-a">A: 指没有吃、碰、明杠，手牌全部靠自己摸进。门清状态下胡牌通常有额外番数。</div>
+        </div>
+        <p style="margin-top:1rem; font-size:0.95rem; color:#616058;">更多常见问题可参考上述链接中的详细说明。</p>
+    </div>
+
+    <!-- 结尾 -->
+    <div class="footer-note">
+        本页为产品说明式介绍 · 内容基于通用规则整理 · 仅供参考
+    </div>
+
+</div>
+</body>
+</html>
